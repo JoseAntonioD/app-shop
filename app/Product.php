@@ -1,0 +1,43 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use App\Category;
+
+class Product extends Model
+{
+    
+
+	//$product -> category.
+	//Un producto pertenece a unha categoria.
+	public function category()
+	{
+		return $this->belongsTo(Category::class);
+	}
+
+
+
+	//$product -> images
+	//un produto  pode ter varias imaxes.
+	public function images()
+	{
+		return $this->hasMany(ProductImage::class);
+	}
+
+	public function getFeaturedImageUrlAttribute()
+	{
+
+		$featuredImage = $this -> images() -> where('featured', true) -> first();
+
+		if (!$featuredImage)
+			$featuredImage = $this -> images() -> first();
+
+		if ($featuredImage) {
+			return $featuredImage -> url;
+		}
+
+		//default
+		return '/images/products/default.png';
+	}
+}

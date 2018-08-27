@@ -15,7 +15,7 @@
 
                     <div class="team">
                         <div class="row">
-                           <a href="{{ url('/products/create') }}" class="btn btn-primary btn-round">New Product</a>
+                           <a href="{{ url('/admin/products/create') }}" class="btn btn-primary btn-round">New Product</a>
                            <table class="table">
                                 <thead>
                                     <tr>
@@ -37,7 +37,7 @@
                                         <td class="text-right">&euro; {{ $product -> price }}</td>
                                         <td class="td-actions text-right">
                                             
-                                            <form action="{{ url('/products/'.$product -> id ) }}" method="post" accept-charset="utf-8">
+                                            <form action="{{ url('/admin/products/'.$product -> id ) }}" method="post" accept-charset="utf-8">
 
                                                  {{ csrf_field() }}
                                                  {{ method_field('DELETE')}}
@@ -45,11 +45,11 @@
                                                 <a href="#" type="button" rel="tooltip" title="View Product" class="btn btn-info btn-simple btn-xs">
                                                 <i class="fa fa-info"></i>
                                                 </a>
-                                                <a href=" {{ url('/products/'.$product -> id.'/edit') }}" type="button" rel="tooltip" title="Edit Product" class="btn btn-success btn-simple btn-xs">
+                                                <a href=" {{ url('/admin/products/'.$product -> id.'/edit') }}" type="button" rel="tooltip" title="Edit Product" class="btn btn-success btn-simple btn-xs">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
 
-                                                <a href=" {{ url('/products/'.$product -> id.'/images') }}" type="button" rel="tooltip" title="Images Product" class="btn btn-warning btn-simple btn-xs">
+                                                <a href=" {{ url('/admin/products/'.$product -> id.'/images') }}" type="button" rel="tooltip" title="Images Product" class="btn btn-warning btn-simple btn-xs">
                                                     <i class="fa fa-image"></i>
                                                 </a>
 

@@ -23,7 +23,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ url('/products')}}" method="post" accept-charset="utf-8">
+                    <form action="{{ url('/admin/products')}}" method="post" accept-charset="utf-8">
                         {{ csrf_field()  }}
 
                     <div class="row">
@@ -52,7 +52,7 @@
                         
                         
                         <button class="btn btn-primary">Save Product</button>
-                         <a href="{{ url('/products') }}" class="btn brn-default">Cancel</a>
+                         <a href="{{ url('/admin/products') }}" class="btn brn-default">Cancel</a>
 
                     </form>
 

@@ -18,7 +18,8 @@
     <!-- CSS Files -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/material-kit.css') }}" rel="stylesheet"/>
-
+    @yield('styles')
+    
 </head>
 
 <body class="@yield('body-class')">
@@ -56,7 +57,7 @@
 
                                     @if(auth() -> user() -> admin)
                                
-                                        <a href="{{ url('/products') }}" >Gestionar Productos
+                                        <a href="{{ url('/admin/products') }}" >Gestionar Productos
                                     </a>
                                
                                     @endif

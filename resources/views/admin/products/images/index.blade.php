@@ -16,11 +16,11 @@
                         
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form method="post" action=" {{ url('products//images') }}" enctype="multipart/form-data">
+                                <form method="post" action="" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <input type="file" name="photo" required="">
                                     <button type="submit" class="btn btn-primary btn-round">Load New Image</button>
-                                    <a href="{{ url('/products') }}" class="btn btn-primary btn-round"> Go Back</a>
+                                    <a href="{{ url('/admin/products') }}" class="btn btn-primary btn-round"> Go Back</a>
 
                                 </form>
                             </div>
@@ -43,7 +43,7 @@
                                                     <i class="material-icons">favorite</i>
                                                 </button>   
                                             @else
-                                                <a href=" {{ url('/products/'.$product->id.'/images/select/'.$image->id) }}" class="btn btn-primary btn-just-icon btn btn-round">
+                                                <a href=" {{ url('/admin/products/'.$product->id.'/images/select/'.$image->id) }}" class="btn btn-primary btn-just-icon btn btn-round">
                                                     <i class="material-icons">favorite</i>
                                                 </a>   
                                             @endif

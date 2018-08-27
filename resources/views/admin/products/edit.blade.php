@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('body-class','landing-page')
+@section('body-class','product-page')
 
 @section('content')
 
@@ -52,7 +52,7 @@
                         
                         
                         <button class="btn btn-primary">Save Product</button>
-                        <a href="{{ url('/products') }}" class="btn brn-default">Cancel</a>
+                        <a href="{{ url('/admin/products') }}" class="btn brn-default">Cancel</a>
                     </form>
 
                 </div>

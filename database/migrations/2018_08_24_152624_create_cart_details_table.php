@@ -17,7 +17,7 @@ class CreateCartDetailsTable extends Migration
             $table->increments('id');
 
             $table->integer('quantity');
-            $table->integer('discount'); //%
+            $table->integer('discount') ->default(0); //%
 
             //Foreign Key tabla Cart, con valores null posibles.
             $table->integer('cart_id')->unsigned();

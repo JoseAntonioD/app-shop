@@ -13,8 +13,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/products/{id}','ProductController@show'); // edición formulario
 
+Route::post('/cart', 'CartDetailController@store');
 
-Route::middleware(['auth','admin'])->  group(function()
+
+//-> prefix('admin') 
+Route::middleware(['auth','admin'])-> prefix('admin') -> namespace('Admin') -> group(function()
 {
 	Route::get('/products','ProductController@index'); //listar
 	Route::get('/products/create','ProductController@create'); // crear

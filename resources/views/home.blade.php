@@ -20,7 +20,7 @@
                         @endif
     
                         <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                            <li>
+                            <li class="active">
                                 <a href="#dashboard" role="tab" data-toggle="tab">
                                     <i class="material-icons">dashboard</i>
                                     Carrito Compras
@@ -34,7 +34,49 @@
                                 </a>
                             </li>
                         </ul>
+                        @foreach(auth()->user()->cart->details as $detail )
+                            <ul>
+                                <li>{{ $detail }}</li>
+                            </ul>
+                        @endforeach
+                         <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th class="col-md-2 text-center">Name</th>
+                                        <th class="col-md-5 text-center">Description</th>
+                                        <th class="text-center">Category</th>
+                                        <th>Price</th>
+                                        <th class="text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($products as $product)
+                                    <tr>
+                                        <td class="text-center"><img src="{{ $product -> feautured_image_url }}"></td>
+                                        <td><a href="{{ $product -> name }}"></td>
+                                        <td class="text-right">&euro; {{ $product -> price }}</td>
+                                        <td class="td-actions text-right">
+                                            
+                                            <form action="{{ url('/admin/products/'.$product -> id ) }}" method="post" accept-charset="utf-8">
 
+                                                 {{ csrf_field() }}
+                                                 {{ method_field('DELETE')}}
+                                                
+                                                <a href="#" type="button" rel="tooltip" title="View Product" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-info"></i>
+                                                </a>
+                                                
+                                                <button type="submit" rel="tooltip" title="Remove Product" class="btn btn-danger btn-simple btn-xs">
+                                                    <i class="fa fa-times"></i>
+                                                </button> 
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach        
+                                </tbody>
+                           </table>     
+                    
                 </div>
             </div>
         </div>

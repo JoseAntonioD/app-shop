@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class CartDetail extends Model
 {
-    //
+    
+
+
+	public function product()
+	{
+		
+	}
 }

@@ -2644,7 +2644,7 @@
                 "symfony/console": "~2.8|~3.3|~4.0"
             },
             "require-dev": {
-                "laravel/framework": "5.6.*",
+                "laravel/framework": "6.20.26",
                 "phpstan/phpstan": "^0.9.2",
                 "phpunit/phpunit": "~7.2"
             },
